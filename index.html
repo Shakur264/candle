@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyeux anniversaire Franchesca 🎂</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#fff6ef,#ffe4d1);
+    font-family:'Segoe UI',sans-serif;
+    overflow:hidden;
+    padding:20px;
+}
+
+.carte{
+    width:100%;
+    max-width:680px;
+    background:rgba(255,255,255,0.92);
+    border-radius:32px;
+    padding:35px 28px;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,0.12);
+    position:relative;
+    backdrop-filter:blur(6px);
+}
+
+.salutation{
+    color:#d67a47;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:0.95rem;
+    margin-bottom:15px;
+}
+
+.prenom{
+    font-size:3.6rem;
+    font-weight:700;
+    color:#7a482d;
+    margin-bottom:10px;
+}
+
+.sous-texte{
+    color:#ab6e4a;
+    font-size:1.1rem;
+    font-style:italic;
+    margin-bottom:30px;
+}
+
+.btn-secret{
+    display:inline-block;
+    background:#fff0e4;
+    border:1px solid #f3d6c3;
+    color:#8d5737;
+    padding:12px 24px;
+    border-radius:40px;
+    cursor:pointer;
+    transition:0.3s;
+    margin-bottom:20px;
+}
+
+.btn-secret:hover{
+    transform:translateY(-2px);
+    background:#ffe7d7;
+}
+
+.message{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:all 0.6s ease;
+    text-align:left;
+    background:#fffaf6;
+    border-radius:22px;
+    color:#4c3527;
+    line-height:1.8;
+    padding:0 20px;
+}
+
+.message.visible{
+    max-height:700px;
+    opacity:1;
+    padding:25px 20px;
+    margin-top:15px;
+}
+
+.message p{
+    margin-bottom:16px;
+}
+
+.signature{
+    margin-top:20px;
+    text-align:right;
+    color:#b4764e;
+    font-style:italic;
+}
+
+.bougies{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.bougie{
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.bougie:hover{
+    transform:translateY(-5px);
+}
+
+.flame{
+    font-size:2.2rem;
+    transition:0.3s;
+}
+
+.off{
+    opacity:0.25;
+    transform:scale(0.9);
+}
+
+.info{
+    margin-top:20px;
+    background:#fff3ea;
+    color:#9c6a48;
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:0.95rem;
+}
+
+.footer{
+    margin-top:30px;
+    color:#d0a488;
+    font-size:0.75rem;
+}
+
+.confetti{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+.particle{
+    position:absolute;
+    animation:float 4s linear forwards;
+    font-size:1.2rem;
+}
+
+@keyframes float{
+
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+.etoile-magique{
+    position:fixed;
+    color:white;
+    font-size:1.2rem;
+    animation:tomber 3s linear forwards;
+    pointer-events:none;
+    z-index:9999;
+    text-shadow:0 0 12px white;
+}
+
+@keyframes tomber{
+
+    0%{
+        transform:translateY(-100px) scale(0.5);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(100vh) scale(1.4);
+        opacity:0;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .prenom{
+        font-size:2.8rem;
+    }
+
+    .message{
+        font-size:0.96rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="carte">
+
+    <div class="salutation">
+        🎂 joyeux anniversaire 🎂
+    </div>
+
+    <div class="prenom">
+        Franchesca
+    </div>
+
+    <div class="sous-texte">
+        profite pleinement de cette journée spéciale ✨
+    </div>
+
+    <div class="btn-secret" id="ouvrir">
+        ouvrir le petit message ✨
+    </div>
+
+    <div class="message" id="message">
+
+        <p>
+            🎉 Joyeux anniversaire Franchesca.
+        </p>
+
+        <p>
+            Je voulais te souhaiter ça d’une manière un peu différente,
+            alors j’ai pris un peu de mon temps pour faire ce petit programme spécialement pour toi 😄
+        </p>
+
+        <p>
+            Derrière chaque détail, chaque animation et chaque ligne de code,
+            il y avait simplement l’envie de te voir sourire aujourd’hui.
+        </p>
+
+        <p>
+            Tu es une personne que j’apprécie sincèrement
+            et que j’admire beaucoup plus que tu ne l’imagines sûrement.
+        </p>
+
+        <p>
+            Et au passage… excuse-moi d’être parfois l’ami chiant que je suis 😭
+            mais ça démontre juste toute l’affection que j’ai pour toi.
+        </p>
+
+        <p>
+            J’espère vraiment que cette nouvelle année t’apportera
+            beaucoup de bonheur, de paix,
+            de réussite et plein de beaux moments.
+        </p>
+
+        <p>
+            ✨ Maintenant souffle les bougies et fais un vœu.
+        </p>
+
+        <div class="signature">
+            — Urbain 🌙
+        </div>
+
+    </div>
+
+    <div class="bougies">
+
+        <div class="bougie" data-id="0">
+            <div class="flame" id="f0">🕯️✨</div>
+        </div>
+
+        <div class="bougie" data-id="1">
+            <div class="flame" id="f1">🕯️✨</div>
+        </div>
+
+        <div class="bougie" data-id="2">
+            <div class="flame" id="f2">🕯️✨</div>
+        </div>
+
+    </div>
+
+    <div class="info" id="info">
+        ☁️ clique sur une bougie et fais un vœu ✨
+    </div>
+
+    <div class="footer">
+        fait avec attention pour ton anniversaire ✨
+    </div>
+
+</div>
+
+<div class="confetti" id="confetti"></div>
+
+<script>
+
+const ouvrir = document.getElementById("ouvrir");
+const message = document.getElementById("message");
+
+ouvrir.addEventListener("click",()=>{
+
+    message.classList.toggle("visible");
+
+    lancerConfetti(18);
+
+});
+
+const bougies = document.querySelectorAll(".bougie");
+
+let eteintes = 0;
+
+bougies.forEach((bougie,index)=>{
+
+    bougie.addEventListener("click",()=>{
+
+        const flame = document.getElementById("f"+index);
+
+        if(!flame.classList.contains("off")){
+
+            flame.classList.add("off");
+
+            flame.innerHTML = "🕯️";
+
+            eteintes++;
+
+            lancerConfetti(10);
+
+            changerMessage();
+
+        }
+
+    });
+
+});
+
+function changerMessage(){
+
+    const info = document.getElementById("info");
+
+    if(eteintes===1){
+
+        info.innerHTML = "🍃 premier vœu envoyé...";
+
+    }
+
+    else if(eteintes===2){
+
+        info.innerHTML = "🌬️ encore une bougie ✨";
+
+    }
+
+    else if(eteintes===3){
+
+        info.innerHTML = "🎂✨ Joyeux anniversaire Franchesca ✨";
+
+        lancerConfetti(50);
+
+        pluieEtoiles();
+
+    }
+
+}
+
+function lancerConfetti(nombre){
+
+    const container = document.getElementById("confetti");
+
+    const emojis = ["✨","🎉","🌸","💫","🎂","🍃","⭐"];
+
+    for(let i=0;i<nombre;i++){
+
+        const item = document.createElement("div");
+
+        item.classList.add("particle");
+
+        item.innerHTML =
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+        item.style.left = Math.random()*100 + "%";
+
+        item.style.bottom = "-20px";
+
+        item.style.animationDuration =
+        (3 + Math.random()*2) + "s";
+
+        container.appendChild(item);
+
+        setTimeout(()=>{
+
+            item.remove();
+
+        },5000);
+
+    }
+
+}
+
+function pluieEtoiles(){
+
+    for(let i=0;i<60;i++){
+
+        const etoile = document.createElement("div");
+
+        etoile.classList.add("etoile-magique");
+
+        etoile.innerHTML = "✨";
+
+        etoile.style.left = Math.random()*100 + "vw";
+
+        etoile.style.animationDuration =
+        (2 + Math.random()*3) + "s";
+
+        etoile.style.fontSize =
+        (0.8 + Math.random()*1.8) + "rem";
+
+        document.body.appendChild(etoile);
+
+        setTimeout(()=>{
+
+            etoile.remove();
+
+        },5000);
+
+    }
+
+}
+
+setTimeout(()=>{
+
+    lancerConfetti(15);
+
+},500);
+
+</script>
+
+</body>
+</html>
